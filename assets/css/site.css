@@ -21,3 +21,36 @@
 .brand-mark{background:transparent;border-radius:0}.brand-name b{white-space:nowrap}.footer-brand{width:320px}.footer-brand img{max-height:122px;object-fit:contain;object-position:left center}.logo-animation .logo-motion{background:#fff}.office-note{font-size:.78rem;color:#9fb0c2;margin-top:12px}
 @media(max-width:720px){.brand{gap:8px}.brand-mark{width:72px;height:72px}.brand-name b{font-size:.98rem;white-space:nowrap}.brand-name small{font-size:.55rem;white-space:nowrap}.footer-brand{width:min(330px,100%)}.partner-visual{background-position:center 6%}}
 @media(max-width:390px){.brand-mark{width:64px;height:64px}.brand-name b{font-size:.88rem}.brand-name small{font-size:.50rem}}
+
+
+@media(max-width:480px){
+  .hero-content{padding:46px 0 60px}
+  .display{font-size:2.35rem;line-height:1.02}
+  .lead{font-size:.92rem}
+  .hero-actions .btn,
+  .booking-band .btn,
+  .cta-strip .btn,
+  .map-footer .btn{
+    width:100%;
+  }
+  .hero-meta{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .image-band .photo{
+    min-height:300px;
+    background-size:contain;
+    background-position:center center;
+  }
+  .image-band .copy{
+    padding:36px 18px;
+  }
+  .contact-item,
+  .info-card,
+  .insight-card,
+  .value,
+  .partner-point{
+    padding:16px;
+  }
+}
