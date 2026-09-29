@@ -1,0 +1,29 @@
+cd ~/Downloads
+
+mkdir -p ~/wakili-clones
+rm -rf ~/wakili-clones/wanjiru-ngulukyo-advocates
+
+unzip -o wanjiru-ngulukyo-advocates-CECILIA-TEMPLATE.zip -d ~/wakili-clones
+
+cd ~/wakili-clones/wanjiru-ngulukyo-advocates
+
+npm run check
+npm run build
+
+git init
+git add .
+git commit -m "Build Wanjiru Ngulukyo & Company Advocates website"
+git branch -M main
+
+GH_USER="$(gh api user -q .login)"
+
+if gh repo view "$GH_USER/wanjiru-ngulukyo-advocates" >/dev/null 2>&1; then
+  git remote remove origin 2>/dev/null || true
+  git remote add origin "$(gh repo view "$GH_USER/wanjiru-ngulukyo-advocates" --json sshUrl -q .sshUrl)"
+  git push -u origin main --force
+else
+  gh repo create wanjiru-ngulukyo-advocates --public --source=. --remote=origin --push
+fi
+
+vercel link --yes --project wanjiru-ngulukyo-advocates || true
+vercel --prod --yes

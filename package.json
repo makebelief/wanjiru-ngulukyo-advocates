@@ -1,0 +1,10 @@
+{
+  "name": "wanjiru-ngulukyo-company-advocates",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wanjiru Ngulukyo & Company Advocates — Cecilia Mwaura template adaptation",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}
